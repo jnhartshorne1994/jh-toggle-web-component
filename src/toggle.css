@@ -1,0 +1,11 @@
+.toggle-box__title {
+    padding: 10px 10px;
+    background: #f3f3f3;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.toggle-box__content {
+    padding: 10px 10px;
+    background: #f3f3f3;
+}

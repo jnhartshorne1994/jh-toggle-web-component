@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Toggle / Accordion Component</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            media="screen"
+            href="src/toggle.css"
+        />
+        <script src="src/toggle.js"></script>
+    </head>
+    <body>
+        <toggle-box>
+            <span class="toggle-box__title" slot="title">
+                I am a nice neat title! (click me to toggle the box)
+            </span>
+            <div class="toggle-box__content" slot="content">
+                Here is some toggle-able content!
+            </div>
+        </toggle-box>
+    </body>
+</html>
