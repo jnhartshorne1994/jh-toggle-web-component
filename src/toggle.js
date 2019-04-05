@@ -23,7 +23,7 @@ class ToggleBox extends HTMLElement {
         </style>
 
         <div class="toggle-box">
-            <div class="toggle-box__title">
+            <div class="toggle-box__title" aria-label="Open toggle content">
                 <slot name="title"></slot>
             </div>
             <div class="toggle-box__content">
@@ -43,9 +43,11 @@ class ToggleBox extends HTMLElement {
     toggleContent() {
         if (this.getAttribute("open") == "true") {
             this.setAttribute("open", "closed");
+            this.title.setAttribute("aria-label", "Open toggle content");
             this.content.style.display = "none";
         } else {
             this.setAttribute("open", "true");
+            this.title.setAttribute("aria-label", "Close toggle content");
             this.content.style.display = "block";
         }
     }
