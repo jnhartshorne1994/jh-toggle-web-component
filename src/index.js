@@ -22,7 +22,9 @@ export class Accordian extends HTMLElement {
 		template.innerHTML = `
         <style>
             :host .accordian {
-                display: block;
+				display: block;
+				font-family: "Arial";
+				margin-bottom: 1rem;
             }
 
             :host([default]) .accordian__title {
@@ -36,10 +38,6 @@ export class Accordian extends HTMLElement {
             :host([default]) .accordian__content {
                 padding: 1rem 2rem;
                 background: #FAFAFA;
-            }
-
-            :host([bbc]) .accordian {
-                display: inline-block;
             }
 
             :host([bbc]) .accordian__title {
