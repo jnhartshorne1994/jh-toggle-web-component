@@ -1,6 +1,6 @@
 # Accessible Accordian
 
-A simple, **accessible**, light-weight Web component written in pure JavaScript, allowing the easy creation of accordion-type components.
+A simple, **accessible**, light-weight Web component written in pure JavaScript, allowing the easy creation of accordion-type components. Use one of our themes or apply your own. It's your choice!
 
 ## Installation
 
