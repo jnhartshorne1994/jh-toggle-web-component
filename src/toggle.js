@@ -22,7 +22,7 @@ class ToggleBox extends HTMLElement {
 
 		template.innerHTML = `
         <style>
-            :host([default]) .toggle-box {
+            :host .toggle-box {
                 display: inline-block;
             }
 
@@ -37,6 +37,23 @@ class ToggleBox extends HTMLElement {
             :host([default]) .toggle-box__content {
                 padding: 1rem 2rem;
                 background: #FAFAFA;
+            }
+
+            :host([bbc]) .toggle-box {
+                display: inline-block;
+            }
+
+            :host([bbc]) .toggle-box__title {
+                padding: 1rem 2rem;
+                background: #FFD230;
+                font-size: 1.25rem;
+                margin-bottom: 0;
+                margin-top: 0;
+            }
+
+            :host([bbc]) .toggle-box__content {
+                padding: 1rem 2rem;
+                background: #F7F7F5;
             }
 
             .toggle-box__content {
