@@ -1,4 +1,4 @@
-class ToggleBox extends HTMLElement {
+export class ToggleBox extends HTMLElement {
 	constructor() {
 		super();
 		this.initShadowDom();
