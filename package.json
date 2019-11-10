@@ -1,6 +1,6 @@
 {
 	"name": "@jhwc/accessible-accordian-web-component",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "An accessible accordian component.",
 	"main": "src/toggle.js",
 	"scripts": {
@@ -16,5 +16,5 @@
 		"url": "https://github.com/jnhartshorne1994/jh-toggle-web-component/issues"
 	},
 	"homepage": "https://github.com/jnhartshorne1994/jh-toggle-web-component#readme",
-	"keywords": [ "js" ]
+	"keywords": [ "js", "accessible" ]
 }
