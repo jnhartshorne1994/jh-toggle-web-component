@@ -6,7 +6,7 @@ A simple, **accessible**, light-weight Web component written in pure JavaScript,
 
 Install via NPM
 
-```
+``` shell
 npm install @jhwc/accessible-accordian-web-component
 ```
 

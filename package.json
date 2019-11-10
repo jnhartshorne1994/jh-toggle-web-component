@@ -1,6 +1,6 @@
 {
 	"name": "@jhwc/accessible-accordian-web-component",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"description": "An accessible accordian component.",
 	"main": "src/index.js",
 	"scripts": {
