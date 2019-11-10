@@ -9,7 +9,6 @@ class ToggleBox extends HTMLElement {
 		this.initiateSetup();
 	}
 
-	// Initial setup: add accessibility attributes (tabindex, aria-label and aria-expanded)
 	initiateSetup() {
 		this.setAttribute('tabindex', 0);
 		this.setAttribute('aria-expanded', 'false');
