@@ -42,7 +42,7 @@ class ToggleBox extends HTMLElement {
 
     toggleContent() {
         if (this.getAttribute("open") == "true") {
-            this.setAttribute("open", "closed");
+            this.setAttribute("open", "false");
             this.title.setAttribute("aria-label", "Open toggle content");
             this.content.style.display = "none";
         } else {
