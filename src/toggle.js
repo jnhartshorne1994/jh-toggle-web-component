@@ -1,4 +1,4 @@
-export class ToggleBox extends HTMLElement {
+export class Accordian extends HTMLElement {
 	constructor() {
 		super();
 		this.initShadowDom();
@@ -21,11 +21,11 @@ export class ToggleBox extends HTMLElement {
 
 		template.innerHTML = `
         <style>
-            :host .toggle-box {
-                display: inline-block;
+            :host .accordian {
+                display: block;
             }
 
-            :host([default]) .toggle-box__title {
+            :host([default]) .accordian__title {
                 padding: 1rem 2rem;
                 background: #F3F3F3;
                 font-size: 1.25rem;
@@ -33,16 +33,16 @@ export class ToggleBox extends HTMLElement {
                 margin-top: 0;
             }
 
-            :host([default]) .toggle-box__content {
+            :host([default]) .accordian__content {
                 padding: 1rem 2rem;
                 background: #FAFAFA;
             }
 
-            :host([bbc]) .toggle-box {
+            :host([bbc]) .accordian {
                 display: inline-block;
             }
 
-            :host([bbc]) .toggle-box__title {
+            :host([bbc]) .accordian__title {
                 padding: 1rem 2rem;
                 background: #FFD230;
                 font-size: 1.25rem;
@@ -51,22 +51,22 @@ export class ToggleBox extends HTMLElement {
                 margin-top: 0;
             }
 
-            :host([bbc]) .toggle-box__content {
+            :host([bbc]) .accordian__content {
                 padding: 1rem 2rem;
                 background: #F7F7F5;
                 color: #111111;
             }
 
-            .toggle-box__content {
+            .accordian__content {
                 display: none;
             }
         </style>
 
-        <div class="toggle-box">
-            <h2 class="toggle-box__title" aria-label="Open toggle content">
+        <div class="accordian">
+            <h2 class="accordian__title" aria-label="Open toggle content">
                 <slot name="title"></slot>
             </h2>
-            <div class="toggle-box__content">
+            <div class="accordian__content">
                 <slot name="content"></slot>
             </div>
         </div>`;
@@ -99,12 +99,12 @@ export class ToggleBox extends HTMLElement {
 	}
 
 	get content() {
-		return this.shadowRoot.querySelector('.toggle-box__content');
+		return this.shadowRoot.querySelector('.accordian__content');
 	}
 
 	get title() {
-		return this.shadowRoot.querySelector('.toggle-box__title');
+		return this.shadowRoot.querySelector('.accordian__title');
 	}
 }
 
-customElements.define('toggle-box', ToggleBox);
+customElements.define('jhwc-accordian', Accordian);

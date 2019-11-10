@@ -1,4 +1,4 @@
-# Pure JS Web Component
+# Accessible Accordian
 
 A simple, **accessible**, light-weight Web component written in pure JavaScript, allowing the easy creation of accordion-type components.
 
@@ -16,10 +16,10 @@ Import it into your JavaScript
 import "@jhwc/accessible-accordian-web-component"
 ```
 
-Use the element as you wish.
+Use the element within your HTML as though it is a native element.
 
 ```
-<toggle-box></toggle-box>
+<jhwc-accordian></jhwc-accordian>
 ```
 
 ## Requirements
