@@ -1,20 +1,42 @@
 class ToggleBox extends HTMLElement {
-    constructor() {
-        super();
-        this.initShadowDom();
-        this.addClickListener();
-    }
+	constructor() {
+		super();
+		this.initShadowDom();
+		this.addEventListeners();
+	}
 
-    initShadowDom() {
-        const template = document.createElement("template");
-        const shadowRoot = this.attachShadow({ mode: "open" });
+	connectedCallback() {
+		this.initiateSetup();
+	}
 
-        template.innerHTML = `
+	// Initial setup: add accessibility attributes (tabindex, aria-label and aria-expanded)
+	initiateSetup() {
+		this.setAttribute('tabindex', 0);
+		this.setAttribute('aria-expanded', 'false');
+		this.title.setAttribute('aria-label', 'Open toggle content');
+	}
+
+	initShadowDom() {
+		const template = document.createElement('template');
+		const shadowRoot = this.attachShadow({ mode: 'open' });
+
+		template.innerHTML = `
         <style>
-            :host {
-                padding: 10px 10px;
+            :host([default]) .toggle-box {
                 display: inline-block;
-                font-family: 'Arial';
+            }
+
+            :host([default]) .toggle-box__title {
+                padding: 1rem 2rem;
+                background: #F3F3F3;
+                font-size: 1.25rem;
+                margin-bottom: 0;
+                margin-top: 0;
+            }
+
+            :host([default]) .toggle-box__content {
+                padding: 1rem 2rem;
+                background: #FAFAFA;
             }
 
             .toggle-box__content {
@@ -23,42 +45,48 @@ class ToggleBox extends HTMLElement {
         </style>
 
         <div class="toggle-box">
-            <div class="toggle-box__title" aria-label="Open toggle content">
+            <h2 class="toggle-box__title" aria-label="Open toggle content">
                 <slot name="title"></slot>
-            </div>
+            </h2>
             <div class="toggle-box__content">
                 <slot name="content"></slot>
             </div>
         </div>`;
 
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
-    }
+		this.shadowRoot.appendChild(template.content.cloneNode(true));
+	}
 
-    addClickListener() {
-        this.title.addEventListener("click", e => {
-            this.toggleContent();
-        });
-    }
+	addEventListeners() {
+		this.addEventListener('click', e => {
+			this.toggleContent();
+		});
 
-    toggleContent() {
-        if (this.getAttribute("open") == "true") {
-            this.setAttribute("open", "false");
-            this.title.setAttribute("aria-label", "Open toggle content");
-            this.content.style.display = "none";
-        } else {
-            this.setAttribute("open", "true");
-            this.title.setAttribute("aria-label", "Close toggle content");
-            this.content.style.display = "block";
-        }
-    }
+		this.addEventListener('keydown', e => {
+			if (e.keyCode === 13 || e.keyCode === 32) {
+				this.toggleContent();
+			}
+		});
+	}
 
-    get content() {
-        return this.shadowRoot.querySelector(".toggle-box__content");
-    }
+	toggleContent() {
+		if (this.getAttribute('aria-expanded') == 'true') {
+			this.setAttribute('aria-expanded', 'false');
+			this.title.setAttribute('aria-label', 'Open toggle content');
+			this.content.style.display = 'none';
+		} else {
+			this.setAttribute('aria-expanded', 'true');
+			this.title.setAttribute('aria-label', 'Close toggle content');
+			this.content.style.display = 'block';
+		}
+	}
 
-    get title() {
-        return this.shadowRoot.querySelector(".toggle-box__title");
-    }
+	get content() {
+		return this.shadowRoot.querySelector('.toggle-box__content');
+	}
+
+	get title() {
+		return this.shadowRoot.querySelector('.toggle-box__title');
+	}
 }
 
-customElements.define("toggle-box", ToggleBox);
+customElements.define('toggle-box', ToggleBox);

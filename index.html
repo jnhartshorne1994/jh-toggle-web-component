@@ -6,9 +6,15 @@
         <title>Toggle / Accordion Component</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <script src="src/toggle.js"></script>
+
+        <style>
+            .toggle-box__title, .toggle-box__content {
+                font-family: "Arial";
+            }
+        </style>
     </head>
     <body>
-        <toggle-box>
+        <toggle-box default>
             <span class="toggle-box__title" slot="title">
                 I am a nice neat title! (click me to toggle the box)
             </span>
