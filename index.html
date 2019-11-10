@@ -8,12 +8,22 @@
         <script src="dist/bundle.js"></script>
 
         <style>
-            .toggle-box__title, .toggle-box__content {
-                font-family: "Arial";
+            body {
+                max-width: 900px;
+                margin: 0 auto;
             }
         </style>
     </head>
     <body>
+        <jhwc-accordian default>
+            <span class="toggle-box__title" slot="title">
+                I am a nice neat title! (click me to toggle the box)
+            </span>
+            <div class="toggle-box__content" slot="content">
+                Here is some toggle-able content!
+            </div>
+        </jhwc-accordian>
+
         <jhwc-accordian bbc>
             <span class="toggle-box__title" slot="title">
                 I am a nice neat title! (click me to toggle the box)
