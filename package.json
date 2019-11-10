@@ -1,5 +1,5 @@
 {
-	"name": "@jh/accessible-accordian-web-component",
+	"name": "@jhwc/accessible-accordian-web-component",
 	"version": "0.0.1",
 	"description": "An accessible accordian component.",
 	"main": "src/toggle.js",
