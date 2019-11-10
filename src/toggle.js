@@ -46,6 +46,7 @@ class ToggleBox extends HTMLElement {
                 padding: 1rem 2rem;
                 background: #FFD230;
                 font-size: 1.25rem;
+                color: #111111;
                 margin-bottom: 0;
                 margin-top: 0;
             }
@@ -53,6 +54,7 @@ class ToggleBox extends HTMLElement {
             :host([bbc]) .toggle-box__content {
                 padding: 1rem 2rem;
                 background: #F7F7F5;
+                color: #111111;
             }
 
             .toggle-box__content {
