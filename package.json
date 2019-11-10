@@ -1,19 +1,22 @@
 {
-	"name": "@jhwc/accessible-accordian-web-component",
-	"version": "0.0.1",
-	"description": "An accessible accordian component.",
-	"main": "src/toggle.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/jnhartshorne1994/jh-toggle-web-component.git"
-	},
-	"author": "JH",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/jnhartshorne1994/jh-toggle-web-component/issues"
-	},
-	"homepage": "https://github.com/jnhartshorne1994/jh-toggle-web-component#readme"
+  "name": "@jhwc/accessible-accordian-web-component",
+  "version": "0.0.1",
+  "description": "An accessible accordian component.",
+  "main": "src/toggle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jnhartshorne1994/jh-toggle-web-component.git"
+  },
+  "author": "JH",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jnhartshorne1994/jh-toggle-web-component/issues"
+  },
+  "homepage": "https://github.com/jnhartshorne1994/jh-toggle-web-component#readme",
+  "keywords": [
+    "js"
+  ]
 }
