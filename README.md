@@ -6,15 +6,21 @@ A simple, **accessible**, light-weight Web component written in pure JavaScript,
 
 Install via NPM
 
-```npm install @jhwc/accessible-accordian-web-component```
+```
+npm install @jhwc/accessible-accordian-web-component
+```
 
 Import it into your JavaScript
 
-```import "@jhwc/accessible-accordian-web-component"```
+```
+import "@jhwc/accessible-accordian-web-component"
+```
 
 Use the element as you wish.
 
-```<toggle-box></toggle-box>```
+```
+<toggle-box></toggle-box>
+```
 
 ## Requirements
 
