@@ -15,3 +15,7 @@ Import it into your JavaScript
 Use the element as you wish.
 
 `<toggle-content></toggle-content>`
+
+## Requirements
+
+The component requires that your setup supports ES6 `import` statements.
