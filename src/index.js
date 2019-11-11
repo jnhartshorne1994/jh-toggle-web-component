@@ -1,18 +1,16 @@
 export class Accordian extends HTMLElement {
 	constructor() {
 		super();
-		this.initShadowDom();
-		this.addEventListeners();
 	}
 
 	connectedCallback() {
+		this.initShadowDom();
 		this.initiateSetup();
+		this.addEventListeners();
 	}
 
 	initiateSetup() {
-		this.setAttribute('tabindex', 0);
 		this.setAttribute('aria-expanded', 'false');
-		this.title.setAttribute('aria-label', 'Open toggle content');
 	}
 
 	initShadowDom() {
@@ -20,7 +18,11 @@ export class Accordian extends HTMLElement {
 		const shadowRoot = this.attachShadow({ mode: 'open' });
 
 		template.innerHTML = `
-        <style>
+		<style>
+			h2 {
+				margin: 0;
+			}
+
             :host .accordian {
 				display: block;
 				font-family: "Arial";
@@ -53,7 +55,15 @@ export class Accordian extends HTMLElement {
                 padding: 1rem 2rem;
                 background: #F7F7F5;
                 color: #111111;
-            }
+			}
+
+			.accordian__title {
+				display: block;
+				width: 100%;
+				font-weight: bold;
+				border: none;
+				text-align: left;
+			}
 
             .accordian__content {
                 display: none;
@@ -61,8 +71,10 @@ export class Accordian extends HTMLElement {
         </style>
 
         <div class="accordian">
-            <h2 class="accordian__title" aria-label="Open toggle content">
-                <slot name="title"></slot>
+			<h2>
+				<button class="accordian__title">
+					${this.title}
+				</button>
             </h2>
             <div class="accordian__content">
                 <slot name="content"></slot>
@@ -76,24 +88,20 @@ export class Accordian extends HTMLElement {
 		this.addEventListener('click', e => {
 			this.toggleContent();
 		});
-
-		this.addEventListener('keydown', e => {
-			if (e.keyCode === 13 || e.keyCode === 32) {
-				this.toggleContent();
-			}
-		});
 	}
 
 	toggleContent() {
 		if (this.getAttribute('aria-expanded') == 'true') {
 			this.setAttribute('aria-expanded', 'false');
-			this.title.setAttribute('aria-label', 'Open toggle content');
 			this.content.style.display = 'none';
 		} else {
 			this.setAttribute('aria-expanded', 'true');
-			this.title.setAttribute('aria-label', 'Close toggle content');
 			this.content.style.display = 'block';
 		}
+	}
+
+	static get observedAttributes() {
+		return ['title'];
 	}
 
 	get content() {
@@ -101,7 +109,11 @@ export class Accordian extends HTMLElement {
 	}
 
 	get title() {
-		return this.shadowRoot.querySelector('.accordian__title');
+		return this.getAttribute('title');
+	}
+
+	set title(title) {
+		return this.setAttribute('title', title);
 	}
 }
 
